@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:text="积分商城"
+                android:textColor="@color/colorWhite"
+                android:textSize="18sp"
+                app:layout_scrollFlags="scroll|snap" />
+
+            <com.youth.banner.Banner
+                android:id="@+id/banner_shop_hot"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                app:delay_time="5000"
+                app:image_scale_type="fit_xy"
+                app:indicator_height="8dp"
+                app:indicator_width="8dp"
+                app:layout_scrollFlags="scroll|snap"
+                app:scroll_time="1500" />
+
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_shop_category"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_shop_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="80dp"
+            android:background="#F2F2F2"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+    </android.support.design.widget.CoordinatorLayout>
+
+</LinearLayout>

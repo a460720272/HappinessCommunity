@@ -26,6 +26,7 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:28.+'
+    implementation 'com.android.support:design:28.+'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
@@ -33,6 +34,31 @@ dependencies {
 
     implementation project(':library')
     implementation project(':framework')
-    //eventbus
+    //eventbus 事件总线
     implementation 'org.greenrobot:eventbus:3.1.1'
+    //autosize 屏幕适配
+    implementation 'me.jessyan:autosize:1.1.2'
+    //circleimageview 圆形图片
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
+    //gson
+    implementation 'com.google.code.gson:gson:2.8.2'
+    //bottom-bar 底部导航栏
+    implementation 'com.roughike:bottom-bar:2.3.1'
+
+    //fragmentation 懒加载和滑动返回
+//    implementation 'me.yokeyword:fragmentation:1.3.7'
+//    implementation 'me.yokeyword:fragmentation-swipeback:1.3.7'
+
+    //glide 图片加载
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    //easypermissions 动态权限申请
+    implementation 'pub.devrel:easypermissions:1.3.0'
+    //SmartRefreshLayout 下拉刷新、上拉加载
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0'  //1.0.5及以前版本的老用户升级需谨慎，API改动过大
+    //litepal 数据库
+    implementation 'org.litepal.android:java:3.0.0'
+    //BaseRecyclerViewAdapterHelper 适配器
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.34'
+    //banner 广告轮播图
+    implementation 'com.youth.banner:banner:1.4.10'  //最新版本
 }

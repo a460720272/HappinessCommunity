@@ -68,4 +68,13 @@ public interface RestClientService {
     @Multipart
     @POST
     Call<String> upload(@Url String url, @Part MultipartBody.Part file);
+
+    /**
+     * 　进行文件上传请求,并且附带请求参数
+     *
+     * @param file 文件
+     */
+    @Multipart
+    @POST
+    Call<String> upload(@Url String url, @Part MultipartBody.Part file, @FieldMap WeakHashMap<String, Object> params);
 }

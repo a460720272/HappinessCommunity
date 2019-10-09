@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -14,4 +14,43 @@
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
     </style>
+
+    <!--闪屏页-->
+    <style name="GuideActivityTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <!-- Spinner 样式-->
+    <style name="RegSpinnerStyle">
+        <!-- Spinner 点击时箭头的颜色 -->
+        <item name="colorAccent">@color/colorAccent</item>
+        <!-- Spinner 箭头的颜色 -->
+        <item name="colorControlNormal">@color/colorPrimary</item>
+    </style>
+
+    <!-- 我的 - 个人信息 - 底部对话框样式 -->
+    <style name="BottomDialogStyle">
+        <!-- 对话框背景 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- 没有标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 是否浮现在Activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 背景透明 -->
+        <item name="android:windowIsTranslucent">false</item>
+        <!-- 是否有覆盖 -->
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- 进出的显示动画 -->
+        <item name="android:windowAnimationStyle">@style/bottomDialogAnim</item>
+        <!-- 背景变暗 -->
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+    <!-- 底部对话框动画 -->
+    <style name="bottomDialogAnim" parent="android:Animation">
+        <item name="@android:windowEnterAnimation">@anim/bottom_dialog_enter_anim</item>
+        <item name="@android:windowExitAnimation">@anim/bottom_dialog_exit_anim</item>
+    </style>
+
 </resources>

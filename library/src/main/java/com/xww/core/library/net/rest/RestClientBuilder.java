@@ -35,6 +35,7 @@ public class RestClientBuilder {
     private RequestBody mBody;
     //文件上传
     private File mFile;
+    private String mUploadParamName;
     /**
      * 文件下载
      */
@@ -106,6 +107,11 @@ public class RestClientBuilder {
         return this;
     }
 
+    public final RestClientBuilder uploadParam(String uploadParam) {
+        this.mUploadParamName = uploadParam;
+        return this;
+    }
+
     public final RestClientBuilder fileName(String name) {
         this.mFileName = name;
         return this;
@@ -123,6 +129,6 @@ public class RestClientBuilder {
 
     public final RestClient build() {
         return new RestClient(mUrl, mContext, mStyle, mParams, mRequest, mSuccess, mFailure, mError, mBody,
-                mFile, mFileName, mFileDir, mExtensionName);
+                mFile, mUploadParamName, mFileName, mFileDir, mExtensionName);
     }
 }

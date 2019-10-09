@@ -63,6 +63,8 @@ public class RestCallback implements Callback<String> {
                 //请求错误，返回错误码和错误信息
                 ERROR.onError(response.code(), response.message());
             }
+
+            stopRequest();
         }
 
         requestFinished();
@@ -94,12 +96,7 @@ public class RestCallback implements Callback<String> {
      */
     private void stopRequest() {
         if (CONTEXT != null) {
-            AppConfiguration.getInstance().getHandler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    AVLoadingDialog.stopLoading();
-                }
-            }, 1000);
+            AVLoadingDialog.stopLoading();
         }
 
         if (REQUEST != null) {

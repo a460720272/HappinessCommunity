@@ -13,6 +13,7 @@ import com.xww.core.library.net.rest.download.DownloadTask;
 import com.xww.core.library.util.log.LoggerUtil;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.WeakHashMap;
 
 import okhttp3.MediaType;
@@ -50,15 +51,17 @@ public class RestClient {
     private final RequestBody BODY;
     //文件上传
     private final File FILE;
-    //文件完整名字
+    //文件上传接口参数
+    private final String UPLOAD_PARAM_NAME;
+    //文件下载 - 文件完整名字
     private final String FILE_NAME;
-    //文件路径
+    //文件下载 - 文件路径
     private final String FILE_DIR;
-    //文件扩展名
+    //文件下载 - 文件扩展名
     private final String EXTENSION_NAME;
 
     RestClient(String url, Context context, Enum<AVLoaderStyle> style, WeakHashMap<String, Object> params, IRequest request, ISuccess success, IFailure failure,
-               IError error, RequestBody body, File file, String fileName, String fileDir, String extensionName) {
+               IError error, RequestBody body, File file, String uploadParamName, String fileName, String fileDir, String extensionName) {
         this.PARAMS.putAll(params);
         this.URL = url;
         this.CONTEXT = context;
@@ -69,6 +72,7 @@ public class RestClient {
         this.ERROR = error;
         this.BODY = body;
         this.FILE = file;
+        this.UPLOAD_PARAM_NAME = uploadParamName;
         this.FILE_NAME = fileName;
         this.FILE_DIR = fileDir;
         this.EXTENSION_NAME = extensionName;
@@ -110,10 +114,10 @@ public class RestClient {
                 break;
             case UPLOAD:
                 /*
-                 * 上传文件请求
+                 * 上传文件请求, UPLOAD_PARAM_NAME 为接口的请求参数名
                  */
                 final RequestBody requestBody = MultipartBody.create(MediaType.parse(MultipartBody.FORM.toString()), FILE);
-                final MultipartBody.Part file = MultipartBody.Part.createFormData("file", FILE.getName(), requestBody);
+                final MultipartBody.Part file = MultipartBody.Part.createFormData(UPLOAD_PARAM_NAME, FILE.getName(), requestBody);
                 call = service.upload(URL, file);
                 break;
             default:
@@ -154,6 +158,12 @@ public class RestClient {
         }
     }
 
+    public final void upload() {
+        if (FILE != null) {
+            request(HttpMethod.UPLOAD);
+        }
+    }
+
     public final void delete() {
         request(HttpMethod.DELETE);
     }
@@ -177,6 +187,7 @@ public class RestClient {
      * 请求开始
      */
     private void startRequest() {
+        /********************************** 请求进度对话框有 bug **********************************/
         if (CONTEXT != null) {
             if (STYLE != null) {
                 AVLoadingDialog.showLoading(CONTEXT, STYLE);

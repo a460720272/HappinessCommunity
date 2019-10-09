@@ -8,8 +8,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.happinesscommunity.framework.mvp.proxy.ProxyActivity;
+import com.xww.core.library.util.activity.ActivityUtil;
 
-
+/**
+ * 基类 Activity
+ */
 public abstract class BaseActivity extends AppCompatActivity implements IBaseView {
 
     private ProxyActivity mProxyActivity;
@@ -33,6 +36,8 @@ public abstract class BaseActivity extends AppCompatActivity implements IBaseVie
 
         initLayout(savedInstanceState);
 
+        ActivityUtil.getInstance().addActivity(this);
+
         mProxyActivity = createProxyActivity();
         mProxyActivity.bindPresenter();
 
@@ -52,10 +57,6 @@ public abstract class BaseActivity extends AppCompatActivity implements IBaseVie
     protected void onDestroy() {
         super.onDestroy();
         mProxyActivity.unbindPresenter();
-    }
-
-    @Override
-    public Context getContext() {
-        return this;
+        ActivityUtil.getInstance().finishActivity(this);
     }
 }

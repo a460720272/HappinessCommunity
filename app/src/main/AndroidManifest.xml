@@ -3,19 +3,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.ndsy.graduate.xww.happinesscommunity">
 
+    <!-- Android 6.0 以上动态权限申请 -->
+    <!--网络权限-->
     <uses-permission android:name="android.permission.INTERNET" />
+    <!--相机权限-->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!--读写 sdcard 权限-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:name=".app.HCApp"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher_community"
+        android:icon="@mipmap/ic_launcher_app"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_community"
+        android:roundIcon="@mipmap/ic_launcher_app_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+
+        <!-- 屏幕适配大小 -->
+        <meta-data
+            android:name="design_width_in_dp"
+            android:value="320" />
+        <meta-data
+            android:name="design_height_in_dp"
+            android:value="480" />
+
+        <!-- app 闪屏页 -->
         <activity
-            android:name=".view.activity.SplashActivity"
+            android:name=".view.activity.splash.SplashActivity"
             android:screenOrientation="portrait"
             android:theme="@style/SplashActivityTheme">
             <intent-filter>
@@ -24,9 +40,74 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- app 引导页 -->
         <activity
-            android:name=".view.activity.MainActivity"
+            android:name=".view.activity.guide.GuideActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/GuideActivityTheme" />
+
+        <!-- app 主页面-->
+        <activity
+            android:name=".view.activity.main.MainActivity"
             android:screenOrientation="portrait" />
+
+        <!-- app 登录界面-->
+        <activity
+            android:name=".view.activity.login.LoginActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- app 注册界面-->
+        <activity
+            android:name=".view.activity.login.RegisterActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- 我的 - 小区管理界面-->
+        <activity
+            android:name=".view.activity.main.personal.CommunityManagerActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- 我的 - 身份认证界面-->
+        <activity
+            android:name=".view.activity.main.personal.UserIdentificationActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- 我的 - 小区管理界面 - 身份审核-->
+        <activity
+            android:name=".view.activity.main.personal.IdentityManagerActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- 我的 - 小区管理界面 - 住户名单-->
+        <activity
+            android:name=".view.activity.main.personal.IdentityUsrListActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- 我的 - 小区管理 - 住户名单 - 用户详细信息界面 -->
+        <activity
+            android:name=".view.activity.main.personal.IdentityUsrListDetailInfoActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- 我的 - 个人信息 -->
+        <activity
+            android:name=".view.activity.main.personal.PersonsalInfoActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- 积分商城 - 我的账单 -->
+        <activity
+            android:name=".view.activity.main.shop.BillActivity"
+            android:screenOrientation="portrait" />
+
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.ndsy.graduate.xww.happinesscommunity.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
     </application>
 
 </manifest>

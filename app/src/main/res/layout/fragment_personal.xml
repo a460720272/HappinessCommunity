@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.scwang.smartrefresh.layout.SmartRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/smart_refresh_personal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    app:srlEnableOverScrollDrag="true"
+    app:srlPrimaryColor="@color/colorPrimary">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F2F2F2"
+        android:clipChildren="false">
+
+        <ImageView
+            android:id="@+id/iv_personal_head_bg"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:background="@color/colorPrimary" />
+
+        <ImageView
+            android:id="@+id/iv_personal_photo"
+            android:layout_width="88dp"
+            android:layout_height="88dp"
+            android:elevation="6dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_identification_photo"
+            app:layout_anchor="@id/cv_personal_info"
+            app:layout_anchorGravity="center_horizontal" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv_personal_info"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:layout_margin="8dp"
+            android:layout_marginTop="80dp"
+            android:clipChildren="false"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="4dp"
+            app:layout_anchor="@id/iv_personal_head_bg"
+            app:layout_anchorGravity="bottom">
+
+            <!-- 签到打卡 -->
+            <ImageView
+                android:id="@+id/iv_personal_sign"
+                android:layout_width="24dp"
+                android:layout_height="22dp"
+                android:layout_gravity="right"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="2dp"
+                android:src="@drawable/ic_personal_signed" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="44dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_personal_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="姓名"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_personal_house_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:text="小区住址门牌号"
+                    android:textColor="@color/colorGray"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <ImageView
+                        android:id="@+id/iv_personal_identification"
+                        android:layout_width="64dp"
+                        android:layout_height="32dp"
+                        android:layout_marginLeft="8dp"
+                        android:src="@drawable/ic_personal_not_sure_identity" />
+
+                    <TextView
+                        android:id="@+id/tv_personal_user_permission"
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginLeft="4dp"
+                        android:gravity="center_vertical"
+                        android:text="| 未认证用户"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="12sp"
+                        android:textStyle="italic" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="220dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- item 卡片一 -->
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="2dp"
+                    app:cardElevation="2dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <!-- 个人信息 -->
+                        <RelativeLayout
+                            android:id="@+id/btn_personal_info_item"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:background="@drawable/boder_bottom_line">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:drawableLeft="@drawable/ic_personal_info"
+                                android:drawableRight="@drawable/ic_arrow_right"
+                                android:gravity="center_vertical"
+                                android:text="个人信息"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="16sp" />
+                        </RelativeLayout>
+
+                        <!-- 账号安全 -->
+                        <RelativeLayout
+                            android:id="@+id/btn_personal_account_security_item"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:background="@drawable/boder_bottom_line">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:drawableLeft="@drawable/ic_personal_account_security"
+                                android:drawableRight="@drawable/ic_arrow_right"
+                                android:gravity="center_vertical"
+                                android:text="账号安全"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="16sp" />
+                        </RelativeLayout>
+
+                        <!-- 小区管理 -->
+                        <RelativeLayout
+                            android:id="@+id/btn_personal_community_manager_item"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:drawableLeft="@drawable/ic_personal_community_manager"
+                                android:drawableRight="@drawable/ic_arrow_right"
+                                android:gravity="center_vertical"
+                                android:text="小区管理"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="16sp" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+                <!-- item 卡片一 -->
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="2dp"
+                    app:cardElevation="2dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <!-- 意见反馈 -->
+                        <RelativeLayout
+                            android:id="@+id/btn_personal_suggestion_item"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:background="@drawable/boder_bottom_line">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:drawableLeft="@drawable/ic_personal_suggestion"
+                                android:drawableRight="@drawable/ic_arrow_right"
+                                android:gravity="center_vertical"
+                                android:text="意见反馈"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="16sp" />
+                        </RelativeLayout>
+
+                        <!-- 软件升级 -->
+                        <RelativeLayout
+                            android:id="@+id/btn_personal_software_upgrade_item"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:background="@drawable/boder_bottom_line">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:drawableLeft="@drawable/ic_personal_software_upgrade"
+                                android:drawableRight="@drawable/ic_arrow_right"
+                                android:gravity="center_vertical"
+                                android:text="软件升级"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="16sp" />
+                        </RelativeLayout>
+
+                        <!-- 关于软件信息 -->
+                        <RelativeLayout
+                            android:id="@+id/btn_personal_about_software_item"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:drawableLeft="@drawable/ic_personal_software_info"
+                                android:drawableRight="@drawable/ic_arrow_right"
+                                android:gravity="center_vertical"
+                                android:text="关于软件"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="16sp" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+                <!-- 切换账号 -->
+                <Button
+                    android:id="@+id/btn_personal_login_out"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/bg_personal_btn_login_out"
+                    android:text="切换账户"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+    </android.support.design.widget.CoordinatorLayout>
+
+</com.scwang.smartrefresh.layout.SmartRefreshLayout>

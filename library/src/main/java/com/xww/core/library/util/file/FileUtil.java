@@ -1,5 +1,6 @@
 package com.xww.core.library.util.file;
 
+import android.annotation.SuppressLint;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
@@ -247,6 +248,7 @@ public class FileUtil {
     /**
      * 通知系统刷新系统相册，使照片展现出来
      */
+    @SuppressLint("ObsoleteSdkInt")
     private static void refreshDCIM() {
         if (Build.VERSION.SDK_INT >= 19) {
             //兼容android4.4版本，只扫描存放照片的目录
@@ -370,5 +372,18 @@ public class FileUtil {
             }
         }
         return data;
+    }
+
+    /**
+     * 重命名文件
+     *
+     * @param oldPath 原来的文件地址
+     * @param newPath 新的文件地址
+     */
+    public static boolean renameFile(String oldPath, String newPath) {
+        File oleFile = new File(oldPath);
+        File newFile = new File(newPath);
+        //执行重命名
+        return oleFile.renameTo(newFile);
     }
 }

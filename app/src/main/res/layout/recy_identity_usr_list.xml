@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="168dp"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="2dp">
+
+    <ImageView
+        android:id="@+id/recy_item_identity_usr_list_photo"
+        android:layout_width="108dp"
+        android:layout_height="168dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_identification_photo" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="108dp"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/recy_item_identity_usr_list_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_identification_name"
+                android:gravity="center_vertical"
+                android:text="姓名"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/recy_item_identity_usr_list_status"
+                android:layout_width="32dp"
+                android:layout_height="12dp"
+                android:layout_marginLeft="4dp"
+                android:src="@drawable/ic_personal_not_sure_identity" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/recy_item_identity_usr_list_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:drawableLeft="@drawable/ic_identification_contact"
+            android:gravity="center_vertical"
+            android:text="手机号码"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/recy_item_identity_usr_list_permission"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:drawableLeft="@drawable/ic_identity_permission"
+            android:gravity="center_vertical"
+            android:text="小区管理员"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/recy_item_identity_usr_list_house"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:drawableLeft="@drawable/ic_identification_house_number"
+            android:gravity="center_vertical"
+            android:text="小区住址门牌号"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/recy_item_identity_usr_list_detail_info"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_identity_manager_agree"
+            android:text="查看详细信息"
+            android:textColor="@color/colorWhite"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>

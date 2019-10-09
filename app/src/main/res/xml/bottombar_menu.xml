@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        icon="@drawable/ic_main_home"
+        id="@+id/tab_main_home"
+        title="首页" />
+    <tab
+        icon="@drawable/ic_main_server"
+        id="@+id/tab_main_server"
+        title="服务" />
+    <tab
+        icon="@drawable/ic_main_shop"
+        id="@+id/tab_main_shop"
+        title="商城" />
+    <tab
+        icon="@drawable/ic_main_personal"
+        id="@+id/tab_main_personal"
+        title="我的" />
+</tabs>

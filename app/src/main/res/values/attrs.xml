@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 我的 - 个人信息 - 自定义积分控件 -->
+    <declare-styleable name="IntegralView">
+        <!-- 步数文本的颜色 -->
+        <attr name="step_text_color" format="color" />
+        <!-- 步数文本字体的大小 -->
+        <attr name="step_text_size" format="dimension" />
+        <!-- 步数文本字体的大小 -->
+        <attr name="step_text_spacing" format="float" />
+        <!-- 步数的最大值 -->
+        <attr name="step_max_value" format="float" />
+        <!-- 弧的颜色 -->
+        <attr name="step_arc_color" format="color" />
+        <!-- 进度的颜色 -->
+        <attr name="step_progress_color" format="color" />
+        <!-- 弧的宽度 -->
+        <attr name="step_arc_width" format="dimension" />
+        <!-- 弧开始的角度 -->
+        <attr name="arc_start_angle" format="float" />
+        <!-- 弧开始的角度 -->
+        <attr name="arc_sweep_angle" format="float" />
+    </declare-styleable>
+
+</resources>

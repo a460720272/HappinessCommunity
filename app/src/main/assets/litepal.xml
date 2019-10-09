@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+
+    <!--数据库名称-->
+    <dbname value="db_happiness_community" />
+
+    <version value="3" />
+
+    <list>
+        <!-- 我的页面 - 用户数据表 -->
+        <mapping class="com.ndsy.graduate.xww.happinesscommunity.db.UserIdentityTable" />
+    </list>
+
+</litepal>
